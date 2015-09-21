@@ -1,7 +1,8 @@
 import cPickle
-import pickle
 import os
 from contextlib import closing
+import logging
+
 
 class ATDB:
 
@@ -12,7 +13,7 @@ class ATDB:
         self.minidx = {}
         self.reportidx = {}
         self.infoidx = {}
-        self.basepath = "E://listen//" + domain + "//"
+        self.basepath = "//home" + domain + "//"
         self.daypath = "day//"
         self.minpath = "min//"
         self.reportpath = "report//"

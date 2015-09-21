@@ -4,6 +4,8 @@ import threading
 import SocketServer
 from athandle import *
 from atdb import *
+import logging
+
 
 
 class ATMyHandle(ATHandle):
@@ -45,10 +47,9 @@ class ATServerRequestHandler(SocketServer.BaseRequestHandler):
 class ATServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
     pass
 
-
-if __name__ == "__main__":
+def run():
     # Port 0 means to select an arbitrary unused port
-    HOST, PORT = "localhost", 9009
+    HOST, PORT = "0.0.0.0", 9009
 
     server = ATServer((HOST, PORT), ATServerRequestHandler)
     ip, port = server.server_address
@@ -65,4 +66,7 @@ if __name__ == "__main__":
     while(1):
         time.sleep(1000)
 
-    server.shutdown()
+    server.shutdown()	
+
+if __name__ == "__main__":
+	run()
