@@ -52,7 +52,7 @@ def run():
     HOST, PORT = "0.0.0.0", 9009
 
     server = ATServer((HOST, PORT), ATServerRequestHandler)
-    ip, port = server.server_address
+    logging.info(server.server_address)
 
     # Start a thread with the server -- that thread will then start one
     # more thread for each request
@@ -69,4 +69,4 @@ def run():
     server.shutdown()	
 
 if __name__ == "__main__":
-	run()
+    run()
