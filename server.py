@@ -10,7 +10,7 @@ __loghandle.setFormatter( logging.Formatter('%(asctime)s - %(name)s - %(levelnam
 logging.root.addHandler(__loghandle)
 
 
-__sites_path = os.path.join(os.getcwd(), 'sites\\')
+__sites_path = os.path.join(os.getcwd(), 'sites//')
 logging.info(__sites_path)
 if os.path.exists(__sites_path):
 	site.addsitedir(__sites_path)
