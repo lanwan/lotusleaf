@@ -14,7 +14,9 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write("Hello, world")
         items = ["Item 1", "Item 2", "Item 3"]
-        self.render(os.path.join(os.getcwd(), "//static//test.html"), title="My title", items=items)
+        path = os.path.join(os.getcwd(), "//static//test.html")
+        print path
+        self.render(path, title="My title", items=items)
 
 
 def run():
