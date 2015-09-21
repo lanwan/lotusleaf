@@ -4,11 +4,11 @@ import logging
 
 
 try:
-  from SimpleHTTPServer import SimpleHTTPRequestHandler as Handler
-  from SocketServer import TCPServer as Server
+    from SimpleHTTPServer import SimpleHTTPRequestHandler as Handler
+    from SocketServer import TCPServer as Server
 except ImportError:
-  from http.server import SimpleHTTPRequestHandler as Handler
-  from http.server import HTTPServer as Server
+    from http.server import SimpleHTTPRequestHandler as Handler
+    from http.server import HTTPServer as Server
 
 
 def run():
@@ -19,10 +19,10 @@ def run():
         
     httpd = Server(("", PORT), Handler)
     try:
-      print("Start serving at port %i" % PORT)
-      httpd.serve_forever()
+        print("Start serving at port %i" % PORT)
+        httpd.serve_forever()
     except KeyboardInterrupt:
-      pass
+        pass
     httpd.server_close()
 
 
