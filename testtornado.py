@@ -1,4 +1,5 @@
 import logging
+import os
 
 try:
     import tornado
@@ -11,8 +12,8 @@ except:
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write("Hello, world")
-        items = ["Item 1", "Item 2", "Item 3"]
-        self.render("//static//test.html", title="My title", items=items)
+        items = ["Item 1", "Item 2", "Item 3"] 
+        self.render(os.path.join(os.getcwd(),"static//test.html"), title="My title", items=items)
 
 
 def run():
