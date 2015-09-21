@@ -19,8 +19,8 @@ else:
 #import testhttpsvr
 #testhttpsvr.run()
 
-import testtornado
-testtornado.run()
+import testweb
+testweb.run()
 
 
 
