@@ -15,5 +15,5 @@ class MainHandler(tornado.web.RequestHandler):
 
 def run():
     application = tornado.web.Application([(r"/", MainHandler),])
-    application.listen(PORT)
+    application.listen(8000)
     tornado.ioloop.IOLoop.instance().start()
